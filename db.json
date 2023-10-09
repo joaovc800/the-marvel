@@ -15,5 +15,11 @@
   ],
   "profile": {
     "name": "typicode"
-  }
+  },
+  "users": [
+    {
+      "email": "marvel-user@marvel.com",
+      "password": "marvel@123"
+    }
+  ]
 }

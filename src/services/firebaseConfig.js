@@ -1,15 +1,20 @@
 import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
+import { getAnalytics } from "firebase/analytics";
+import { getAuth, onAuthStateChanged  } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCXnNl4ZMotIZOkJuzTGbyaZg5EC5jsdQE",
-  authDomain: "react-auth-b8f8a.firebaseapp.com",
-  projectId: "react-auth-b8f8a",
-  storageBucket: "react-auth-b8f8a.appspot.com",
-  messagingSenderId: "337870583399",
-  appId: "1:337870583399:web:2a1851656f08b92e9b86c2",
+  apiKey: "AIzaSyBwTvjQhY3fztQlTJCemTbjto_lEx9QeYU",
+  authDomain: "the-marvel-49010.firebaseapp.com",
+  projectId: "the-marvel-49010",
+  storageBucket: "the-marvel-49010.appspot.com",
+  messagingSenderId: "1076376014940",
+  appId: "1:1076376014940:web:fdce61c7fcb1d2d2249699",
+  measurementId: "G-5GCWTN5BC4"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-export const auth = getAuth(app);
+const analytics = getAnalytics(app);
+
+const auth = getAuth(app);
+
+export {auth, onAuthStateChanged}

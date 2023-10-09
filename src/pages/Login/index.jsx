@@ -1,29 +1,55 @@
 import { useState } from "react";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
-import { Link } from "react-router-dom";
+import { Link, useNavigate  } from "react-router-dom";
+import { auth, onAuthStateChanged } from "../../services/firebaseConfig";
 import arrowImg from "../../assets/arrow.svg";
 import logoImg from "../../assets/logo.jpg";
-import { auth } from "../../services/firebaseConfig";
+import { useForm } from "react-hook-form";
+import { yupResolver } from '@hookform/resolvers/yup'
+import * as yup from 'yup'
 import "./styles.css";
+
+const validation = yup.object().shape({
+  email: yup.string().required("E-mail é obrigatório"),
+  password: yup.string().required("Senha é obrigatória")
+})
 
 export function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate()
 
-  const [signInWithEmailAndPassword, user, loading, error] =
-    useSignInWithEmailAndPassword(auth);
+  const { register, handleSubmit, watch, formState: { errors } } = useForm({
+    resolver: yupResolver(validation)
+  });
 
-  function handleSignIn(e) {
-    e.preventDefault();
-    signInWithEmailAndPassword(email, password);
-  }
+  const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
+
+  onAuthStateChanged(auth, (user) => {
+
+    if(user.uid){
+      //Verificar se está logado, se estiver vai para pagina inicial
+      navigate("/register")
+    }
+  })
 
   if (loading) {
-    return <p>carregando...</p>;
+    return <p>loading...</p>;
   }
   if (user) {
     return console.log(user);
   }
+
+
+
+  const onSubmit = data => {
+    
+    signInWithEmailAndPassword(email, password);
+
+  }
+
+  //console.log(watch("email"));
+
   return (
     <div className="container">
       <header className="header">
@@ -31,16 +57,18 @@ export function Login() {
         <span>Por favor digite suas informações de login</span>
       </header>
 
-      <form>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <div className="inputContainer">
           <label htmlFor="email">E-mail</label>
           <input
             type="text"
             name="email"
+            {...register("email")}
             id="email"
             placeholder="johndoe@gmail.com"
             onChange={(e) => setEmail(e.target.value)}
           />
+          <p className="error-message">{errors.email?.message}</p>
         </div>
 
         <div className="inputContainer">
@@ -49,14 +77,16 @@ export function Login() {
             type="password"
             name="password"
             id="password"
+            {...register("password")}
             placeholder="********************"
             onChange={(e) => setPassword(e.target.value)}
           />
+          <p className="error-message">{errors.password?.message}</p>
         </div>
 
         <a href="#">Esqueceu sua senha ?</a>
 
-        <button className="button" onClick={handleSignIn}>
+        <button type="submit" className="button">
           Entrar <img src={arrowImg} alt="->" />
         </button>
         <div className="footer">
