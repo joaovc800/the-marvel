@@ -3,10 +3,15 @@ import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link, useNavigate  } from "react-router-dom";
 import { auth, onAuthStateChanged } from "../../services/firebaseConfig";
 import arrowImg from "../../assets/arrow.svg";
-import logoImg from "../../assets/logo.jpg";
+import logoImg from "../../assets/logo-marvel-256.png";
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup'
-import * as yup from 'yup'
+import Form from 'react-bootstrap/Form'
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+import * as yup from 'yup';
 import "./styles.css";
 
 const validation = yup.object().shape({
@@ -31,6 +36,7 @@ export function Login() {
       //Verificar se está logado, se estiver vai para pagina inicial
       navigate("/home")
     }
+    
   })
 
   if (loading) {
@@ -50,7 +56,57 @@ export function Login() {
 
   //console.log(watch("email"));
 
+  
   return (
+
+    <>
+    <div className="container">
+    {['Dark'].map((variant) =>(
+      <Card
+      bg={variant.toLowerCase()}
+      key={variant}
+      text={variant.toLowerCase() === 'light' ? 'dark' : 'white'}
+        style={{ width: '30rem' }}
+        className="mb-"
+      >
+      <Card.Body>
+        <Card.Text>
+          <header className="header">
+          <img  src={logoImg} alt="Workflow" className="logoImg" />
+          <span className="center">Por favor, digite os seus dados de login</span>
+        </header>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <Form.Group as={Row}controlId="formPlaintextEmail">
+            <Form.Label column sm="5">
+              Email
+            </Form.Label>
+            <Col sm="15">
+              <Form.Control type="text" defaultValue="email@example.com" />
+            </Col>
+          </Form.Group>
+
+          <Form.Group as={Row}  controlId="formPlaintextPassword">
+            <Form.Label column sm="5">
+              Senha
+            </Form.Label>
+            <Col sm="15">
+              <Form.Control type="password" placeholder="********************" />
+            </Col>
+          </Form.Group>
+          <a href="#">Esqueceu sua senha?</a>
+          <Form.Group as={Row}  className="mb-3" controlId="">
+            <Button variant="secondary" type="submit">Acessar</Button>
+          </Form.Group>
+        </form>
+        </Card.Text>
+      </Card.Body>
+      </Card>
+    ))}
+     
+      
+    </div>
+    </>
+     /* 
     <div className="container">
       <header className="header">
         <img  src={logoImg} alt="Workflow" className="logoImg" />
@@ -94,6 +150,6 @@ export function Login() {
           <Link to="/register">Crie a sua conta aqui</Link>
         </div>
       </form>
-    </div>
+    </div>*/
   );
 }

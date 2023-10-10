@@ -1,4 +1,4 @@
-.container {
+/*.container {
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -106,3 +106,9 @@
   color: #5C73DB;
 }
 
+*/
+body{
+
+  background-image:url('../../assets/background.jpg')
+  
+}
