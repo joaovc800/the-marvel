@@ -1,33 +1,33 @@
 # Projeto Personagens da Marvel
 
-## DescriÁ„o
-Este projeto È uma aplicaÁ„o web que utiliza tecnologias como React, Vite, HOOK-FORMS, HTML, CSS, JavaScript, consumo de arquivos JSON, rotas e LocalStorage. O principal objetivo deste projeto È consumir a API da Marvel para exibir informaÁıes sobre personagens e permitir o cadastro de personagens personalizados via json-server.
+## Descri√ß√£o
+Este projeto √© uma aplica√ß√£o web que utiliza tecnologias como React, Vite, HOOK-FORMS, HTML, CSS, JavaScript, consumo de arquivos JSON, rotas e LocalStorage. O principal objetivo deste projeto √© consumir a API da Marvel para exibir informa√ß√µes sobre personagens e permitir o cadastro de personagens personalizados via json-server.
 
 ## Tecnologias Utilizadas
-- **React:** A biblioteca JavaScript utilizada para criar a interface de usu·rio da aplicaÁ„o.
-- **Vite:** O build tool que permite o desenvolvimento r·pido e eficiente de aplicaÁıes web.
-- **HOOK-FORMS:** Uma biblioteca para gerenciamento de formul·rios em React.
-- **HTML:** Utilizado para estruturar o conte˙do da aplicaÁ„o.
-- **CSS:** Respons·vel pela estilizaÁ„o e aparÍncia da aplicaÁ„o.
-- **JavaScript:** A linguagem de programaÁ„o principal para a lÛgica da aplicaÁ„o.
-- **Consumo de Arquivos JSON:** Os dados da API da Marvel s„o consumidos a partir de arquivos JSON.
-- **Rotas:** ImplementaÁ„o de navegaÁ„o e roteamento para diferentes p·ginas da aplicaÁ„o.
-- **LocalStorage:** Armazenamento local para salvar dados do usu·rio, como dados do usu·rio.
+- **React:** A biblioteca JavaScript utilizada para criar a interface de usu√°rio da aplica√ß√£o.
+- **Vite:** O build tool que permite o desenvolvimento r√°pido e eficiente de aplica√ß√µes web.
+- **HOOK-FORMS:** Uma biblioteca para gerenciamento de formul√°rios em React.
+- **HTML:** Utilizado para estruturar o conte√∫do da aplica√ß√£o.
+- **CSS:** Respons√°vel pela estiliza√ß√£o e apar√™ncia da aplica√ß√£o.
+- **JavaScript:** A linguagem de programa√ß√£o principal para a l√≥gica da aplica√ß√£o.
+- **Consumo de Arquivos JSON:** Os dados da API da Marvel s√£o consumidos a partir de arquivos JSON.
+- **Rotas:** Implementa√ß√£o de navega√ß√£o e roteamento para diferentes p√°ginas da aplica√ß√£o.
+- **LocalStorage:** Armazenamento local para salvar dados do usu√°rio, como dados do usu√°rio.
 
 ## Funcionalidades
-- Exibir informaÁıes dos personagens da Marvel a partir da API oficial.
-- Permitir a pesquisa e filtragem de personagens com base em critÈrios especÌficos.
-- Cadastrar personagens personalizados que s„o armazenados no json-server.
-- Visualizar detalhes e informaÁıes adicionais de cada personagem.
-- Navegar entre diferentes p·ginas da aplicaÁ„o com o uso de rotas.
-- Utilizar o LocalStorage para manter as preferÍncias e dados do usu·rio.
+- Exibir informa√ß√µes dos personagens da Marvel a partir da API oficial.
+- Permitir a pesquisa e filtragem de personagens com base em crit√©rios espec√≠ficos.
+- Cadastrar personagens personalizados que s√£o armazenados no json-server.
+- Visualizar detalhes e informa√ß√µes adicionais de cada personagem.
+- Navegar entre diferentes p√°ginas da aplica√ß√£o com o uso de rotas.
+- Utilizar o LocalStorage para manter as prefer√™ncias e dados do usu√°rio.
 
-## InstalaÁ„o e Uso
-1. Clone o repositÛrio do projeto.
-2. Instale as dependÍncias com `npm install`.
+## Instala√ß√£o e Uso
+1. Clone o reposit√≥rio do projeto.
+2. Instale as depend√™ncias com `npm install`.
 3. Execute o json-server para simular a API com `json-server --watch db.json`.
-4. Inicie a aplicaÁ„o com `npm rum dev`.
+4. Inicie a aplica√ß√£o com `npm run dev`.
 
-Certifique-se de configurar as chaves de autenticaÁ„o necess·rias para acessar a API da Marvel, conforme documentaÁ„o oficial.
+Certifique-se de configurar as chaves de autentica√ß√£o necess√°rias para acessar a API da Marvel, conforme documenta√ß√£o oficial.
 
 
