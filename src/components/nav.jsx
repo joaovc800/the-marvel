@@ -12,9 +12,15 @@ function signOutApp(){
 
 function NavBar() {
 
-    const navigate = useNavigate()
+ 
+    
 
+    const navigate = useNavigate()
     onAuthStateChanged(auth, (user) => {
+      
+      if( user.email){
+        localStorage.setItem('user', user.email);
+      }
       if(!user) navigate("/")
     })
 
@@ -26,6 +32,7 @@ function NavBar() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
+              <Nav.Link>{localStorage.user}</Nav.Link>
               <NavDropdown title="Meus personagens" id="basic-nav-dropdown">
                 <NavDropdown.Item href="/characteres/list">Listar</NavDropdown.Item>
                 <NavDropdown.Item href="/characteres/create">Cadastrar</NavDropdown.Item>

@@ -12,8 +12,7 @@ export function AppRoutes() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/notFound"  element={<NotFound />} />
-        <Route path="*"  element={<Login />} />
+        <Route path="*"  element={<NotFound />} />
         <Route path="/" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/home" element={<Home />} />

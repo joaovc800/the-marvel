@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { createElement, useEffect, useState } from "react";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../../services/firebaseConfig";
@@ -10,6 +10,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import Spinner from 'react-bootstrap/Spinner';
 import * as yup from 'yup';
 import "./styles.css";
 
@@ -29,9 +30,20 @@ export function Login() {
 
   const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
 
+for(var i in errors){
+  const ref = errors[i].ref
+  ref.classList.add('border', 'border-danger', 'border-2', 'text-danger')
+
+}
 
   if (loading) {
-    return <p>loading...</p>;
+    return  (
+      <div className="container">
+        <Spinner variant="dark" style={{width: '7rem', height: '7rem'}} animation="border" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </Spinner>
+      </div>
+      )
   }
 
   if (user) navigate("/home")
@@ -41,7 +53,6 @@ export function Login() {
   return (
 
     <div className="bg-img">
-
       <div className="container">
         {['Dark'].map((variant) => (
           <Card
@@ -62,20 +73,13 @@ export function Login() {
                   <Form.Label column sm="5">
                     Email
                   </Form.Label>
-                  
-                    <Form.Control type="text" {...register("email")} onChange={(e) => setEmail(e.target.value)} placeholder="email@exemplo.com" />
-                    <div className="badge badge-danger">{errors.email?.message}</div>
-                  
+                    <Form.Control type="text" {...register("email")} onChange={(e) => setEmail(e.target.value)} placeholder="email@exemplo.com" />         
                 </Form.Group>
-
                 <Form.Group as={Row} controlId="formPlaintextPassword">
                   <Form.Label column sm="5">
                     Senha
                   </Form.Label>
-                  
                     <Form.Control type="password" {...register("password")} onChange={(e) => setPassword(e.target.value)} placeholder="********" />
-                    <div className="badge badge-danger">{errors.password?.message}</div>
-                  
                 </Form.Group>
                 <Form.Group as={Row} className="mb-3 mt-2" controlId="">
                   <Button variant="secondary" type="submit">Acessar</Button>

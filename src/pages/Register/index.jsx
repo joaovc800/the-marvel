@@ -31,7 +31,13 @@ export function Register() {
   }
 
   if (loading) {
-    return <p>carregando...</p>
+    return  (
+      <div className="container">
+        <Spinner variant="dark" style={{width: '7rem', height: '7rem'}} animation="border" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </Spinner>
+      </div>
+      )
   }
 
   return (

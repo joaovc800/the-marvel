@@ -2,8 +2,8 @@ import md5 from 'md5';
 
 const requestMarvel = async (endpoint, options)  => {
 
-    const publicKey = '77f0a3969f716e263cc88446917310b5';
-    const privateKey = 'af9986c6c7929a6adabec9cce6c0e014b2901ab2';
+    const publicKey = '3a99bd39c508569e210904b562d2e81f';
+    const privateKey = '933639f110736f9ef74db2141ed86a05ec7b3c1b';
     const timestamp = new Date().getTime().toString();
     const hash = md5(timestamp + privateKey + publicKey, 'hex');
     
