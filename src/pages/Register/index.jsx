@@ -27,7 +27,7 @@ export function Register() {
   function handleSignOut(data) {
     //data.preventDefault()
     createUserWithEmailAndPassword(data.username, data.password)
-    
+    window.location = '/'
   }
 
   if (loading) {
