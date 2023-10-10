@@ -6,11 +6,13 @@ import { Home } from "../pages/Home";
 import { Describe } from "../pages/Describe";
 import { Characteres } from "../pages/Characteres";
 import { CharacteresCreate } from "../pages/Characteres/create";
+import { NotFound } from "../pages/NotFound";
 
 export function AppRoutes() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/notFound"  element={<NotFound />} />
         <Route path="*"  element={<Login />} />
         <Route path="/" element={<Login />} />
         <Route path="/register" element={<Register />} />
