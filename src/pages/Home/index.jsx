@@ -22,7 +22,7 @@ export function Home() {
         <div>
             <NavBar/>
             <div className="p-4">
-                <h1 className="character-list">Lista de personagens da marvel</h1>
+                <h1 className="character-list bangers">Lista de personagens da marvel</h1>
                 <div className="character-list">    
                     {data.map(( d, index) => (
                         <a key={index} href={"/describe/" + d.id}>

@@ -1,0 +1,23 @@
+.img-describe{
+    width: 500px;
+}
+
+.img-comics{
+    width: 200px;
+}
+
+.comics-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+    height: auto;
+    overflow: auto;
+    gap: 0.5rem;
+}
+
+@media only screen and (max-width: 760px){
+    .img-describe, .img-comics, .w-100-comic{
+        width: 100%;
+    }
+}

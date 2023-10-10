@@ -42,11 +42,12 @@
     border: 2px solid #000;
     margin: 0;
     padding: 3px 10px;
-    font-size: 18px;
+    font-size: 20px;
     bottom: -2px;
     position: absolute;
     right: -6px;
     transform: skew(-15deg);
+    font-family: "Bangers";
 }
 
 .character-list{
