@@ -1,0 +1,34 @@
+
+/*======================
+    404 page
+=======================*/
+.page_404{ padding:40px 0; background:#fff; font-family: 'Arvo', serif;
+}
+
+.four_zero_four_bg{
+ 
+ background-image: url('../../assets/thor.gif');
+    height: 700px;
+    width: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+ }
+ 
+ 
+ .four_zero_four_bg h1{
+ font-size:80px;
+ }
+ 
+  .four_zero_four_bg h3{
+			 font-size:80px;
+			 }
+			 
+			 .link_404{			 
+	color: #fff!important;
+    padding: 10px 20px;
+    background: #0d6efd;
+    margin: 20px 0;
+    font-family: Arial;
+    text-decoration: none;
+    display: inline-block;}
+	.contant_box_404{ margin-top:-50px;}

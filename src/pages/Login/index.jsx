@@ -77,9 +77,6 @@ export function Login() {
                     <div className="badge badge-danger">{errors.password?.message}</div>
                   
                 </Form.Group>
-                <Col md={{ span: 7, offset: 3 }}>
-                  <a href="#">Esqueceu sua senha?</a>
-                </Col>
                 <Form.Group as={Row} className="mb-3 mt-2" controlId="">
                   <Button variant="secondary" type="submit">Acessar</Button>
                 </Form.Group>
