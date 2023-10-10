@@ -69,13 +69,12 @@ export function Login() {
           className="mb-"
         >
         <Card.Body>
-          <Card.Text>
             <header className="header">
             <img  src={logoImg} alt="Workflow" className="logoImg" />
             <span className="center">Por favor, digite os seus dados de login</span>
           </header>
           <form onSubmit={handleSubmit(onSubmit)}>
-            <Form.Group as={Row}controlId="formPlaintextEmail">
+            <Form.Group as={Row}controlId="email">
               <Form.Label column sm="5">
                 Email
               </Form.Label>
@@ -83,8 +82,7 @@ export function Login() {
                 <Form.Control type="text" {...register("email")} onChange={(e) => setEmail(e.target.value)} defaultValue="email@example.com" />
               </Col>
             </Form.Group>
-
-            <Form.Group as={Row}  controlId="formPlaintextPassword">
+            <Form.Group as={Row}  controlId="password">
               <Form.Label column sm="5">
                 Senha
               </Form.Label>
@@ -101,7 +99,6 @@ export function Login() {
               <Link to="/register">Crie a sua conta aqui</Link>
             </div>   
           </form>
-          </Card.Text>
         </Card.Body>
         </Card>
       ))}
@@ -111,50 +108,6 @@ export function Login() {
     </div>
 
     </>
-     /* 
-    <div className="container">
-      <header className="header">
-        <img  src={logoImg} alt="Workflow" className="logoImg" />
-        <span>Por favor digite suas informações de login</span>
-      </header>
-
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="inputContainer">
-          <label htmlFor="email">E-mail</label>
-          <input
-            type="text"
-            name="email"
-            {...register("email")}
-            id="email"
-            placeholder="johndoe@gmail.com"
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <p className="error-message">{errors.email?.message}</p>
-        </div>
-
-        <div className="inputContainer">
-          <label htmlFor="password">Senha</label>
-          <input
-            type="password"
-            name="password"
-            id="password"
-            {...register("password")}
-            placeholder="********************"
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <p className="error-message">{errors.password?.message}</p>
-        </div>
-
-        <a href="#">Esqueceu sua senha ?</a>
-
-        <button type="submit" className="button">
-          Entrar <img src={arrowImg} alt="->" />
-        </button>
-        <div className="footer">
-          <p>Você não tem uma conta?</p>
-          <Link to="/register">Crie a sua conta aqui</Link>
-        </div>
-      </form>
-    </div>*/
+    
   );
 }
