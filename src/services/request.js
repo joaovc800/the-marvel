@@ -1,12 +1,19 @@
-const request = async (args, callback)  => {
-    const url = args.url
-    const option = { method: args.method }
+import md5 from 'md5';
 
-    if(args.body) option.body = JSON.stringify(args.body)
+const requestMarvel = async endpoint  => {
 
-    fetch(url, option)
-    .then(response => response.json())
-    .then(response => callback(response))
+    const publicKey = '77f0a3969f716e263cc88446917310b5';
+    const privateKey = 'af9986c6c7929a6adabec9cce6c0e014b2901ab2';
+    const timestamp = new Date().getTime().toString();
+    const hash = md5(timestamp + privateKey + publicKey, 'hex');
+    
+    const baseUrl = 'https://gateway.marvel.com/v1/public/';
+
+    const url = `${baseUrl}${endpoint}?ts=${timestamp}&apikey=${publicKey}&hash=${hash}`;
+
+    const request = await fetch(url)
+    return await request.json()
+
 }
 
-export default request
+export default requestMarvel

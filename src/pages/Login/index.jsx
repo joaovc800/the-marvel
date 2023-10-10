@@ -29,7 +29,7 @@ export function Login() {
 
     if(user.uid){
       //Verificar se está logado, se estiver vai para pagina inicial
-      navigate("/register")
+      navigate("/home")
     }
   })
 
