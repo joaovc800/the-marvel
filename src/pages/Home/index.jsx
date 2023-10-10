@@ -12,13 +12,13 @@ export function Home() {
 
          const offset = parseInt(Math.random() * 100)
 
-        // requestMarvel('characters', {
-        //     "offset": offset
-        // }).then(response => setData(response.data.results))
+        requestMarvel('characters', {
+            "offset": offset
+        }).then(response => setData(response.data.results))
 
-        fetch('http://localhost:3000/characters')
-        .then(response => response.json())
-        .then(response => setData(response.data.results))
+        // fetch('http://localhost:3000/characters')
+        // .then(response => response.json())
+        // .then(response => setData(response.data.results))
         
     }, [])
 
