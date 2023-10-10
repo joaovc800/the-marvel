@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import NavBar from '../../components/nav';
+import Footer from '../../components/footer';
 import requestMarvel from '../../services/request';
 import "./styles.css";
 
@@ -9,11 +10,15 @@ export function Home() {
 
     useEffect(() => {
 
-        const offset = parseInt(Math.random() * 100)
+        /* const offset = parseInt(Math.random() * 100)
 
         requestMarvel('characters', {
             "offset": offset
-        }).then(response => setData(response.data.results))
+        }).then(response => setData(response.data.results)) */
+
+        fetch('http://localhost:3000/characters')
+        .then(response => response.json())
+        .then(response => setData(response.data.results))
         
     }, [])
 
@@ -34,6 +39,7 @@ export function Home() {
                     ))}
                 </div>
             </div>
+            <Footer/>
         </div>
     );
 }

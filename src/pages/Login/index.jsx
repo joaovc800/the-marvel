@@ -34,19 +34,9 @@ export function Login() {
     return <p>loading...</p>;
   }
 
-  if (user) {
-    useEffect(() => {
-      navigate("/home")
-    }, [])
-    
-  }
+  if (user) navigate("/home")
 
-  const onSubmit = data => {
-
-    signInWithEmailAndPassword(email, password);
-
-  }
-
+  const onSubmit = data => signInWithEmailAndPassword(email, password)
 
   return (
 
@@ -59,7 +49,6 @@ export function Login() {
             key={variant}
             text={variant.toLowerCase() === 'light' ? 'dark' : 'white'}
             style={{ width: '30rem' }}
-            className=""
           >
             <Card.Body>
               <header className="header">
@@ -75,7 +64,7 @@ export function Login() {
                   </Form.Label>
                   
                     <Form.Control type="text" {...register("email")} onChange={(e) => setEmail(e.target.value)} placeholder="email@exemplo.com" />
-                    <p className="error-message">{errors.email?.message}</p>
+                    <div className="badge badge-danger">{errors.email?.message}</div>
                   
                 </Form.Group>
 
@@ -85,7 +74,7 @@ export function Login() {
                   </Form.Label>
                   
                     <Form.Control type="password" {...register("password")} onChange={(e) => setPassword(e.target.value)} placeholder="********************" />
-                    <p className="error-message">{errors.password?.message}</p>
+                    <div className="badge badge-danger">{errors.password?.message}</div>
                   
                 </Form.Group>
                 <Col md={{ span: 7, offset: 3 }}>

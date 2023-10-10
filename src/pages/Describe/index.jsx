@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
-import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { useParams  } from "react-router-dom";
-import { auth, onAuthStateChanged } from "../../services/firebaseConfig";
 import NavBar from '../../components/nav';
+import Footer from '../../components/footer';
 import requestMarvel from '../../services/request';
 import { Row, Col, Container } from "react-bootstrap";
 import "./styles.css";
@@ -60,6 +59,8 @@ export function Describe() {
                     </Row>
                 ))}
             </Container>
+
+            <Footer/>
             
         </div>
     );
