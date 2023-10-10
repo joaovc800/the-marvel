@@ -25,8 +25,9 @@ Este projeto é uma aplicação web que utiliza tecnologias como React, Vite, HO
 ## Instalação e Uso
 1. Clone o repositório do projeto.
 2. Instale as dependências com `npm install`.
-3. Execute o json-server para simular a API com `json-server --watch db.json`.
-4. Inicie a aplicação com `npm run dev`.
+3. Inicie a aplicação com `npm run dev`.
+4. Execute o json-server para simular a API com `json-server --watch db.json`.
+
 
 Certifique-se de configurar as chaves de autenticação necessárias para acessar a API da Marvel, conforme documentação oficial.
 
