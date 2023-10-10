@@ -80,7 +80,7 @@ export function Login() {
                 Email
               </Form.Label>
               <Col sm="15">
-                <Form.Control type="text" {...register("email")} defaultValue="email@example.com" />
+                <Form.Control type="text" {...register("email")} onChange={(e) => setEmail(e.target.value)} defaultValue="email@example.com" />
               </Col>
             </Form.Group>
 
@@ -89,7 +89,7 @@ export function Login() {
                 Senha
               </Form.Label>
               <Col sm="15">
-                <Form.Control type="password" {...register("password")} placeholder="********************" />
+                <Form.Control type="password" {...register("password")} onChange={(e) => setPassword(e.target.value)} placeholder="********************" />
               </Col>
             </Form.Group>
             <a href="#">Esqueceu sua senha?</a>
