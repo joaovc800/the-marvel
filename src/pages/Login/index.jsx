@@ -96,15 +96,20 @@ export function Login() {
             <Form.Group as={Row}  className="mb-3" controlId="">
               <Button variant="secondary" type="submit">Acessar</Button>
             </Form.Group>
+          <div>
+          <span>Você não tem uma conta? </span>
+          <Link to="/register">Crie a sua conta aqui</Link>
+        </div>   
           </form>
           </Card.Text>
         </Card.Body>
         </Card>
       ))}
       
-        
+         
       </div>
     </div>
+
     </>
      /* 
     <div className="container">
