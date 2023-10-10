@@ -2,10 +2,10 @@
     width: 500px;
 }
 
-.img-comics{
+/* .img-comics{
     width: 200px;
     height: 300px;
-}
+} */
 
 .comics-list{
     display: flex;
@@ -17,7 +17,7 @@
     gap: 0.5rem;
 }
 
-.w-100-comic{
+.container-comic{
     overflow: hidden;
     position: relative;
 }

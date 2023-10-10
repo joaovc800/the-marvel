@@ -3,13 +3,13 @@ import { getAnalytics } from "firebase/analytics";
 import { getAuth, onAuthStateChanged, signOut  } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBwTvjQhY3fztQlTJCemTbjto_lEx9QeYU",
-  authDomain: "the-marvel-49010.firebaseapp.com",
-  projectId: "the-marvel-49010",
-  storageBucket: "the-marvel-49010.appspot.com",
-  messagingSenderId: "1076376014940",
-  appId: "1:1076376014940:web:fdce61c7fcb1d2d2249699",
-  measurementId: "G-5GCWTN5BC4"
+  apiKey: "AIzaSyBnMiZjMMdsglKBuqppgZpHd80dnxPMx2U",
+  authDomain: "the-marvel-508b7.firebaseapp.com",
+  projectId: "the-marvel-508b7",
+  storageBucket: "the-marvel-508b7.appspot.com",
+  messagingSenderId: "217349071808",
+  appId: "1:217349071808:web:f73ca7ff70a28579d7de25",
+  measurementId: "G-E3KFM7KNMD"
 };
 
 const app = initializeApp(firebaseConfig);
