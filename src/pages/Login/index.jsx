@@ -25,22 +25,15 @@ export function Login() {
 
   const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
 
-  onAuthStateChanged(auth, (user) => {
-
-    if(user.uid){
-      //Verificar se está logado, se estiver vai para pagina inicial
-      navigate("/home")
-    }
-  })
+  /* onAuthStateChanged(auth, (user) => {
+    if(!user) navigate("/")
+  }) */
 
   if (loading) {
     return <p>loading...</p>;
   }
-  if (user) {
-    return console.log(user);
-  }
 
-
+  if (user) navigate("/home")
 
   const onSubmit = data => {
     

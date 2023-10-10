@@ -3,75 +3,56 @@ import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { useNavigate  } from "react-router-dom";
 import { auth, onAuthStateChanged } from "../../services/firebaseConfig";
 import NavBar from '../../components/nav';
+import md5 from 'md5';
 import requestMarvel from '../../services/request';
 import Card from 'react-bootstrap/Card';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 
 import "./styles.css";
 
+export function Home() {
 
-function Cards(){
-    
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        
-       requestMarvel('characters').then(response => {
-            setData(response)
-       })
-       
+
+        const offset = parseInt(Math.random() * 100)
+
+        requestMarvel('characters', {
+            "offset": offset
+        }).then(response => setData(response.data.results))
         
     }, [])
 
-    //const results = data.data
-    //console.log(results);
-    
-    /* return(
-        <div>
-        {
-            results.forEach(element => {
-                <Card style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src="holder.js/100px180" />
-                    <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
-                        <Card.Text>
-                            Some quick example text to build on the card title and make up the
-                            bulk of the card's content.
-                        </Card.Text>
-                    </Card.Body>
-                </Card>
-            })
-        }
-        </div>
-    ) */
-}
-
-export function Home() {
-
-    const navigate = useNavigate()
-
-    //const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
-
-   /*  onAuthStateChanged(auth, (user) => {
-
-        if(!user.uid){
-        //Verificar se está logado, se estiver vai para pagina inicial
-        navigate("/")
-        }
-    }) */
-/* 
-    if (loading) {
-        return <p>loading...</p>;
-    }
-    if (user) {
-        return console.log(user);
-    }
- */
     return (
         
         <div>
             <NavBar/>
             <div className="p-4">
-                <Cards></Cards>
+                <h1>Lista de personagens da marvel</h1>
+                <Row xs={1} md={2} className="g-4">
+                    {data.map(( d, index) => (
+                        <div key={index} className="d-flex col-lg-2 col-md-6 col-sm-12 py-2">
+                            <Card>
+                                <a className="nav-link tumbnail" href={"/describe/" + d.id}>
+                                    <Card.Img 
+                                        className="image-tumb"
+                                        style={{minHeight : "200px"}}
+                                        variant="top" 
+                                        src={`${d.thumbnail.path}.${d.thumbnail.extension}`}
+                                    />
+                                </a>
+                                <Card.Body>
+                                    <Card.Title>{d.name}</Card.Title>
+                                    <Card.Text>
+                                        
+                                    </Card.Text>
+                                </Card.Body>
+                            </Card>
+                        </div>
+                    ))}
+                </Row>
             </div>
         </div>
     );
