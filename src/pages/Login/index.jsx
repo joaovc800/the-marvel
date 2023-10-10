@@ -57,50 +57,53 @@ export function Login() {
   return (
 
     <>
-    <div className="container">
-    {['Dark'].map((variant) =>(
-      <Card
-      bg={variant.toLowerCase()}
-      key={variant}
-      text={variant.toLowerCase() === 'light' ? 'dark' : 'white'}
-        style={{ width: '30rem' }}
-        className="mb-"
-      >
-      <Card.Body>
-        <Card.Text>
-          <header className="header">
-          <img  src={logoImg} alt="Workflow" className="logoImg" />
-          <span className="center">Por favor, digite os seus dados de login</span>
-        </header>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <Form.Group as={Row}controlId="formPlaintextEmail">
-            <Form.Label column sm="5">
-              Email
-            </Form.Label>
-            <Col sm="15">
-              <Form.Control type="text" defaultValue="email@example.com" />
-            </Col>
-          </Form.Group>
+    <div className="bg-img">
 
-          <Form.Group as={Row}  controlId="formPlaintextPassword">
-            <Form.Label column sm="5">
-              Senha
-            </Form.Label>
-            <Col sm="15">
-              <Form.Control type="password" placeholder="********************" />
-            </Col>
-          </Form.Group>
-          <a href="#">Esqueceu sua senha?</a>
-          <Form.Group as={Row}  className="mb-3" controlId="">
-            <Button variant="secondary" type="submit">Acessar</Button>
-          </Form.Group>
-        </form>
-        </Card.Text>
-      </Card.Body>
-      </Card>
-    ))}
-     
+      <div className="container">
+      {['Dark'].map((variant) =>(
+        <Card
+        bg={variant.toLowerCase()}
+        key={variant}
+        text={variant.toLowerCase() === 'light' ? 'dark' : 'white'}
+          style={{ width: '30rem' }}
+          className="mb-"
+        >
+        <Card.Body>
+          <Card.Text>
+            <header className="header">
+            <img  src={logoImg} alt="Workflow" className="logoImg" />
+            <span className="center">Por favor, digite os seus dados de login</span>
+          </header>
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <Form.Group as={Row}controlId="formPlaintextEmail">
+              <Form.Label column sm="5">
+                Email
+              </Form.Label>
+              <Col sm="15">
+                <Form.Control type="text" defaultValue="email@example.com" />
+              </Col>
+            </Form.Group>
+
+            <Form.Group as={Row}  controlId="formPlaintextPassword">
+              <Form.Label column sm="5">
+                Senha
+              </Form.Label>
+              <Col sm="15">
+                <Form.Control type="password" placeholder="********************" />
+              </Col>
+            </Form.Group>
+            <a href="#">Esqueceu sua senha?</a>
+            <Form.Group as={Row}  className="mb-3" controlId="">
+              <Button variant="secondary" type="submit">Acessar</Button>
+            </Form.Group>
+          </form>
+          </Card.Text>
+        </Card.Body>
+        </Card>
+      ))}
       
+        
+      </div>
     </div>
     </>
      /* 

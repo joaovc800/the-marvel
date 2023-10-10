@@ -107,8 +107,12 @@
 }
 
 */
-body{
+/* body{
 
   background-image:url('../../assets/background.jpg')
   
+} */
+
+.bg-img{
+  background-image:url('../../assets/background.jpg')
 }
