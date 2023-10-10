@@ -73,7 +73,7 @@ export function Login() {
                     Senha
                   </Form.Label>
                   
-                    <Form.Control type="password" {...register("password")} onChange={(e) => setPassword(e.target.value)} placeholder="********************" />
+                    <Form.Control type="password" {...register("password")} onChange={(e) => setPassword(e.target.value)} placeholder="********" />
                     <div className="badge badge-danger">{errors.password?.message}</div>
                   
                 </Form.Group>
