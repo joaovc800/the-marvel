@@ -4,6 +4,7 @@
 
 .img-comics{
     width: 200px;
+    height: 300px;
 }
 
 .comics-list{
@@ -16,8 +17,19 @@
     gap: 0.5rem;
 }
 
+.w-100-comic{
+    overflow: hidden;
+    position: relative;
+}
+
+.img-comics:hover{
+    transform: scale(1.1);
+    filter: grayscale(0.9);
+    transition: all 0.4s;
+}
+
 @media only screen and (max-width: 760px){
-    .img-describe, .img-comics, .w-100-comic{
+    .img-describe{
         width: 100%;
     }
 }

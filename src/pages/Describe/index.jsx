@@ -26,14 +26,14 @@ export function Describe() {
         
         <div>
             <NavBar/>
-            <div className="p-4">
+            <div className="p-5">
                 {data.map(( d, index) => (
                     <div key={index}>
                         <div className="row">
                             <div className="col-sm-12 col-md-6 col-lg-6">
                                 <img className="img-describe" src={`${d.thumbnail.path}.${d.thumbnail.extension}`} />
                             </div>
-                            <div className="col-sm-12 col-md-6 col-lg-6 d-flex align-items-center justify-content-center">
+                            <div className="col-sm-12 flex-column col-md-6 col-lg-6 d-flex align-items-center justify-content-center">
                                 <h1 style={{fontSize: "35px"}} className="bangers">{d.name}</h1>
                                 <p>{d.description}</p>
                             </div>
@@ -46,7 +46,6 @@ export function Describe() {
                                 <div style={{alignSelf: "stretch"}} className="d-flex w-100-comic" key={comicindex}>
                                     <a title={comic.title} style={{alignSelf: "stretch"}} className="d-flex" target="_blank" href={comic.urls[0].url}>
                                         <img className="img-comics" src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`} />
-                                        {/* <p className="bangers my-2">{comic.title}</p> */}
                                     </a>
                                 </div>
                             ))}
