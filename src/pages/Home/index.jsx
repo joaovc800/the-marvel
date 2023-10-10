@@ -15,14 +15,17 @@ function Cards(){
 
     useEffect(() => {
         
-        requestMarvel('characters').then(response => setData(response))
+       requestMarvel('characters').then(response => {
+            setData(response)
+       })
+       
         
     }, [])
 
-    const results = data.data
-    console.log(results);
+    //const results = data.data
+    //console.log(results);
     
-    return(
+    /* return(
         <div>
         {
             results.forEach(element => {
@@ -39,7 +42,7 @@ function Cards(){
             })
         }
         </div>
-    )
+    ) */
 }
 
 export function Home() {
