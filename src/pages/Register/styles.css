@@ -108,5 +108,8 @@
 */
 .bg-img2{
 
-  background-image:url('../../assets/background2.jpg')
+  background-image:url('../../assets/background2.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  
 }

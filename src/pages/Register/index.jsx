@@ -30,12 +30,10 @@ export function Register() {
   }
   return (
 
-    <div >
+    <div className="bg-img2">
       
       <Row style={{height: '97vh'}}>
         <Col sm={4} >
-          
-          
           {['Dark'].map((variant) => (
             <Card
               bg={variant.toLowerCase()}
@@ -90,7 +88,7 @@ export function Register() {
             
             
         </Col>
-        <Col sm={8} className="bg-img2"></Col>
+        <Col sm={8} /*className="bg-img2"*/></Col>
       </Row>
     </div>
     
