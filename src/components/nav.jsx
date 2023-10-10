@@ -4,7 +4,6 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import marvelNav from "../assets/marvel-nav.png";
 import { auth, signOut, onAuthStateChanged } from '../services/firebaseConfig';
 import { useNavigate  } from "react-router-dom";
-import { useEffect } from "react";
 
 
 function signOutApp(){
@@ -18,7 +17,6 @@ function NavBar() {
     onAuthStateChanged(auth, (user) => {
       if(!user) navigate("/")
     })
-    
 
     return (
         <Navbar expand="lg" className="bg-light">
