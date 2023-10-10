@@ -42,11 +42,8 @@ export function Login() {
   if (loading) {
     return <p>loading...</p>;
   }
-  if (user) {
-    return console.log(user);
-  }
 
-
+  if (user) navigate("/home")
 
   const onSubmit = data => {
     
