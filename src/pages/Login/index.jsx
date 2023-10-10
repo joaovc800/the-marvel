@@ -63,32 +63,37 @@ export function Login() {
               </header>
 
               <Form onSubmit={handleSubmit(onSubmit)}>
+                <div className="py-3">
                 <Form.Group as={Row} controlId="formPlaintextEmail">
                   <Form.Label column sm="5">
                     Email
                   </Form.Label>
-                  <Col sm="15">
-                    <Form.Control type="text" {...register("email")} onChange={(e) => setEmail(e.target.value)} placeholder="email@example.com" />
+                  
+                    <Form.Control type="text" {...register("email")} onChange={(e) => setEmail(e.target.value)} placeholder="email@exemplo.com" />
                     <p className="error-message">{errors.email?.message}</p>
-                  </Col>
+                  
                 </Form.Group>
 
                 <Form.Group as={Row} controlId="formPlaintextPassword">
                   <Form.Label column sm="5">
                     Senha
                   </Form.Label>
-                  <Col sm="15">
+                  
                     <Form.Control type="password" {...register("password")} onChange={(e) => setPassword(e.target.value)} placeholder="********************" />
                     <p className="error-message">{errors.password?.message}</p>
-                  </Col>
+                  
                 </Form.Group>
-                <a href="#">Esqueceu sua senha?</a>
-                <Form.Group as={Row} className="mb-3" controlId="">
+                <Col md={{ span: 7, offset: 3 }}>
+                  <a href="#">Esqueceu sua senha?</a>
+                </Col>
+                <Form.Group as={Row} className="mb-3 mt-2" controlId="">
                   <Button variant="secondary" type="submit">Acessar</Button>
                 </Form.Group>
                 <div>
                   <span>Você não tem uma conta? </span>
                   <Link to="/register">Crie a sua conta aqui</Link>
+                </div>
+
                 </div>
               </Form>
 
